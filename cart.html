@@ -1,0 +1,154 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cart.css">
+</head>
+
+<body>
+    <header>
+
+
+        <div class="header-2">
+
+            <div id="menu" class="fas fa-bars"></div>
+            <a href="index.html" class="logo"> Gadgetly </a>
+            <nav class="navbar">
+            
+            </nav>
+
+            <div class="icons">
+
+                <a href="cart.html" class="fas fa-shopping-cart pos_parent">
+                    <span id="cart-count" class="cart-count">0</span>
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+    <section class="cart-item">
+        <h1 class="heading"> <span> Cart Items </span> </h1>
+        <div class="row">
+            <div class="wrap">
+                <div class="cart-table">
+                    <ul id="items">
+
+                    </ul>
+                </div>
+                <div class="sub-table cf">
+                    <div class="summary-block">
+                        <ul>
+                            <li class="grand-total"><span class="sb-label">Total</span><span class="sb-value"></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    <footer class="footer-distributed">
+        <div class="footer-left">
+           <h3>GADGETLY</h3>
+           <p class="footer-links">
+              <a class="active" href="#home">home</a>
+              <a href="#products">products</a>
+              <a href="#featured">featured</a>
+              <a href="#gallery">gallery</a>
+              <a href="#deal">deal</a>
+           </p>
+        </div>
+        <div class="footer-center">
+           <div>
+              <i class="fa fa-map-marker"></i>
+              <p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
+           </div>
+           <div>
+              <i class="fa fa-phone"></i>
+              <p>+1.555.555.5555</p>
+           </div>
+           <div>
+              <i class="fa fa-envelope"></i>
+              <p><a href="mailto:support@company.com">support@company.com</a></p>
+           </div>
+        </div>
+        <div class="footer-right">
+           <p class="footer-company-about">
+              <span>About the company</span>
+              Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus
+              vehicula sit amet.
+           </p>
+        </div>
+     </footer>
+     <hr>
+     <p class="res">All rights Reserved @2023</p>
+     <!-- footer section ends -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- custom js file link  -->
+        <script src="js/main.js"></script>
+    <script>
+        var cart = localStorage.getItem("cartItems");
+        var obj = JSON.parse(cart);
+        if (obj != null) {
+            for (var i = 0; i < obj.items.length; i++) {
+                var html = '<li class="item">';
+                html += '<div class="item-main cf">';
+                html += '<div class="item-block ib-info cf">';
+                html += '<img class="product-img" src=' + obj.items[i].img + ' />';
+                html += '<div class="ib-info-meta">';
+                html += '<span class="title">' + obj.items[i].name + '</span>';
+                html += '</div>';
+                html += '</div>';
+                html += '<div class="item-block ib-qty">';
+                html += '<input type="text" hidden value="' + obj.items[i].price + '" class="actualValue"/>';
+                html += '<input type="text" value="' + obj.items[i].quantity + '" class="qty" />';
+                html += '<span class="price"><span>x</span> $' + obj.items[i].price + '</span>';
+                html += '</div>';
+                html += '<div class="item-block ib-total-price">';
+                html += '<span class="tp-price">$' + obj.items[i].price + '</span>';
+                html += '<span class="tp-remove"><i class="i-cancel-circle"></i></span>';
+                html += '</div>';
+                html += '<div class="item-foot cf">';
+                html += '</div>';
+                html += '</li>';
+                $("#items").append(html);
+            }
+            $(".sb-value").text("$" + obj.total);
+        }
+
+        $(document).on('keyup', '.qty', function () {
+            var value = parseFloat($(this).val());
+            var actualValue = parseFloat($(this).closest('li').find('.actualValue').val());
+            var price = value * actualValue;
+            $(this).closest('li').find('.tp-price').text('');
+            $(this).closest('li').find('.tp-price').text('$' + price);
+            totalPrice();
+        })
+
+        function totalPrice() {
+            var newTotal = 0;
+            $.each($("#items li"), function (i, el) {
+                var total = $(this).find(".tp-price").text();
+                var split = total.split("$");
+                newTotal = newTotal + parseFloat(split[1]);
+            });
+            $(".sb-value").text("");
+            $(".sb-value").text("$" + newTotal);
+        }
+    </script>
+</body>
+
+</html>

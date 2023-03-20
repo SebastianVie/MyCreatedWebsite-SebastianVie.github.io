@@ -1,0 +1,200 @@
+.cf:before, .cf:after {
+	 content: "\0020";
+	 display: block;
+	 height: 0;
+	 overflow: hidden;
+}
+ .cf:after {
+	 clear: both;
+}
+ .cf {
+	 zoom: 1;
+}
+ .wrap {
+	 width: 85%;
+	 margin: 0 auto;
+	 padding: 100px 0;
+}
+ .cart-table {
+	 padding: 10px 0 0;
+	 border-bottom: 1px solid #ccc;
+}
+ .item {
+	 border-bottom: 1px solid #ccc;
+	 margin-bottom: 10px;
+     list-style: none;
+}
+ .item:last-child {
+	 border-bottom: none;
+	 padding-bottom: 0;
+	 margin-bottom: 0;
+}
+ .item .item-block {
+	 float: left;
+}
+ .item .item-block.ib-info {
+	 width: 60%;
+}
+ .item .item-block.ib-info img.product-img {
+	 float: left;
+	 display: block;
+	 width: 100px;
+	 margin-right: 15px;
+}
+ .item .item-block.ib-info .ib-info-meta {
+	 float: left;
+}
+ .item .item-block.ib-info span {
+	 display: block;
+	 margin-bottom: 3px;
+}
+ .item .item-block.ib-info span.title {
+	 font-size: 2em;
+}
+ .item .item-block.ib-info span.itemno {
+	 color: #888;
+	 font-size: 0.8em;
+}
+ .item .item-block.ib-info span.styles {
+	 border-left: 3px solid rgba(0, 0, 0, .1);
+	 padding-left: 5px;
+	 font-size: 0.8em;
+}
+ .item .item-block.ib-info span.styles strong {
+	 display: inline-block;
+	 min-width: 70px;
+}
+ .item .item-block.ib-info span.styles .blue-link {
+	 font-size: 0.8em;
+}
+ .item .item-block.ib-qty {
+	 width: 20%;
+	 text-align: right;
+}
+ .item .item-block.ib-qty input {
+	 text-align: center;
+	 font-size: 16px;
+	 border-radius: 0;
+	 outline: none;
+	 border: 1px solid #ccc;
+	 width: 50px;
+	 height: 40px;
+	 vertical-align: middle;
+	 color: #555;
+}
+ .item .item-block.ib-qty input:focus {
+	 border-color: #7bcde8;
+}
+ .item .item-block.ib-qty span.price {
+	 display: inline-block;
+	 color: #777;
+}
+ .item .item-block.ib-qty span.price > span {
+	 margin: 0 5px;
+}
+ .item .item-block.ib-total-price {
+	 width: 20%;
+	 text-align: right;
+	 padding-top: 6px;
+	 position: relative;
+}
+ .item .item-block.ib-total-price span {
+	 color: #555;
+}
+ .item .item-block.ib-total-price span.tp-price {
+	 font-size: 1.4em;
+	 font-weight: 900;
+}
+
+ .sub-table {
+	 margin: 20px 0 20px;
+	 position: relative;
+}
+ 
+.sub-table .summary-block ul{
+    list-style: none;
+}
+
+ .sub-table .summary-block .sb-promo .btn {
+	 padding: 10px 8px;
+	 font-size: 0.8em;
+}
+ .sub-table .summary-block ul li {
+	 margin-bottom: 10px;
+	 font-size: 0.9em;
+	 text-align: right;
+}
+ .sub-table .summary-block ul li span {
+	 display: inline-block;
+}
+ .sub-table .summary-block ul li span.sb-label {
+	 color: #999;
+	 text-transform: uppercase;
+	 letter-spacing: 1px;
+}
+ .sub-table .summary-block ul li span.sb-value {
+	 font-size: 1.1em;
+	 width: 120px;
+}
+ 
+ .sub-table .summary-block ul li.grand-total {
+	 margin-top: 10px;
+	 font-size: 1.2em;
+	 font-weight: 900;
+}
+
+ @media only screen and (max-width: 860px) {
+	 .item-main {
+		 position: relative;
+	}
+	 .item .item-block.ib-info {
+		 width: 70%;
+	}
+	 .item .item-block.ib-qty {
+		 width: 30%;
+		 text-align: right;
+	}
+	 .item .item-block.ib-total-price {
+		 width: auto;
+		 text-align: right;
+		 padding-top: 0;
+		 position: absolute;
+		 top: 50px;
+		 right: 0;
+	}
+
+	 .sub-table .summary-block {
+		 float: none;
+		 width: 100%;
+		 margin-top: 55px;
+	}
+
+}
+ @media only screen and (max-width: 630px) {
+	 .item .item-block.ib-info {
+		 float: left;
+		 width: 100%;
+	}
+	 .item .item-block.ib-qty {
+		 float: left;
+		 width: auto;
+		 margin-top: 10px;
+	}
+	 .item .item-block.ib-total-price {
+		 float: left;
+		 width: auto;
+		 position: relative;
+		 top: 13px;
+		 right: 0;
+		 border-left: 1px solid #ccc;
+		 padding-left: 15px;
+		 margin-left: 15px;
+	}
+	 .item .bundle-block {
+		 display: none;
+	}
+	 .item .item-block.ib-info img.product-img {
+		 width: 70px;
+	}
+}
+ 
