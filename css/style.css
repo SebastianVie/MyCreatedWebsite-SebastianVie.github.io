@@ -200,6 +200,7 @@ header .header-2.header-active{
 }
 
 .products .box-container .box .info h3{
+    height: 100%;
     padding:1rem;
     font-size: 2rem;
     color:var(--black);
