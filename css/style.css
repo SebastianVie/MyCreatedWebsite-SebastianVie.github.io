@@ -180,7 +180,6 @@ header .header-2.header-active{
 }
 
 .products .box-container .box{
-    height 100%;
     flex:1 1 30rem;
     border:.1rem solid rgba(0,0,0,.3);
     overflow: hidden;
