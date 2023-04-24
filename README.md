@@ -1,7 +1,7 @@
 # Javascript_assignment IE - E-Commerce Website Gaming
 
 This Website is for my Individual assignment in Javascript. It is a Website for IE-Gamers, where several Products are displayed. These procuts include Computers, Chases, and accesseries. You can click on these and add them to the cart. You can add them to the cart and delete them by writing 0.
-In my Javascript COde I implented wit vanilla JS and JQuery:
+In my Javascript Code I implented with vanilla JS and JQuery:
 Navbar toggling: The code toggles the visibility of the navigation bar when the menu icon is clicked. It also changes the menu icon to an 'X' icon and vice versa.
 
 Header active class: When scrolling, it adds the "header-active" class to the header element if the scroll position is more than 68 pixels from the top. This could change the appearance of the header, such as its background color or size.
